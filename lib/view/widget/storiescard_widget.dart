@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class StoriesCard extends StatelessWidget {
-  const StoriesCard({
+  StoriesCard({
     Key? key,
+    required this.image,
+    required this.title,
   }) : super(key: key);
-
+  String image;
+  String title;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+      padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
       child: Column(
         children: [
           Container(
@@ -17,11 +20,26 @@ class StoriesCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(35),
               color: Colors.blue,
-              image: const DecorationImage(
-                  image: AssetImage("assets/image2.jpg"), fit: BoxFit.cover),
+              image:
+                  DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
             ),
             child: Stack(
               children: const [
+                // Positioned(
+                //   bottom: -10,
+                //   right: 35,
+                //   child: Align(
+                //     alignment: Alignment.bottomCenter,
+                //     child: CircleAvatar(
+                //       radius: 16,
+                //       backgroundColor: Colors.white,
+                //       child: CircleAvatar(
+                //         radius: 14,
+                //         backgroundImage: AssetImage("assets/image1.jpg"),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 Positioned(
                   right: 36,
                   bottom: -10,
@@ -38,7 +56,7 @@ class StoriesCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          const Text("Laura Laporic"),
+          Text(title),
         ],
       ),
     );

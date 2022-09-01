@@ -170,9 +170,28 @@ class _HomepageState extends State<Homepage> {
                 height: MediaQuery.of(context).size.height / 4,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
+                    itemCount: 6,
                     itemBuilder: (BuildContext context, index) {
-                      return const StoriesCard();
+                      List image = [
+                        "assets/image2.jpg",
+                        "assets/image3.jpg",
+                        "assets/image4.jpg",
+                        "assets/image1.jpg",
+                        "assets/image2.jpg",
+                        "assets/image3.jpg",
+                      ];
+                      List title = [
+                        "Laura Laporic",
+                        "Naura Laporic",
+                        "Maura Laporic",
+                        "Laura Laporic",
+                        "Naura Laporic",
+                        "Maura Laporic",
+                      ];
+                      return StoriesCard(
+                        image: image[index],
+                        title: title[index],
+                      );
                     }),
               ),
               Divider(
@@ -185,11 +204,22 @@ class _HomepageState extends State<Homepage> {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: 3,
                     itemBuilder: (BuildContext context, index) {
+                      List data = [
+                        "Mathilda Rebus",
+                        "Nathilda Rebus",
+                        "Sathilda Rebus"
+                      ];
+                      List image = [
+                        "assets/image2.jpg",
+                        "assets/image3.jpg",
+                        "assets/image4.jpg"
+                      ];
+                      List times = ["8 min", "12 min"];
                       return NewsFeedCard(
                         width: width,
-                        name: "Mathilda Rebus",
-                        time: "8 min",
-                        circleimage: "assets/image2.jpg",
+                        name: data[index],
+                        time: times[index],
+                        circleimage: image[index],
                       );
                     }),
               ),

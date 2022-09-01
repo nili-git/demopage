@@ -57,6 +57,29 @@ class NewsFeedCard extends StatelessWidget {
             ),
           ),
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: const [
+            Text(
+              "2.6k Comments",
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Text(
+              "2.7k Shares",
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        // FbReaction(),
         Divider(
           height: 5,
           thickness: 4,
